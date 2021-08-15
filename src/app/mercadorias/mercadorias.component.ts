@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mercadorias.component.css']
 })
 export class MercadoriasComponent implements OnInit {
+  title = "Lista de compras";
+  mercadorias = {
+    descricao:"Arroz",
+    quantidade:1
+  }
 
   constructor() { }
 
