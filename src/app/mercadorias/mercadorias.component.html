@@ -4,7 +4,39 @@
     </h1>
 </div>
 <div>
-    <ul>
-        <li>{{mercadorias.descricao}} - {{mercadorias.quantidade}}</li>
-    </ul>
+    <table class="center-hor layout-table" width="50px">
+        <thead>
+            <tr class="header-table-gray">
+                <th>
+                    Índice
+                </th>
+                <th>
+					ID
+				</th>
+				<th>
+					Mercadoria
+				</th>
+				<th>
+					Quantidade
+				</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar" 
+            [ngClass]="{par:par,impar:impar}">
+                <td>
+					{{i}}
+				</td>
+				<td>
+					{{mercadoria.id}}
+				</td>
+				<td>
+					{{mercadoria.descricao}}
+				</td>
+				<td>
+					{{mercadoria.quantidade}}
+				</td>
+			</tr>
+		</tbody>
+    </table>
 </div>
