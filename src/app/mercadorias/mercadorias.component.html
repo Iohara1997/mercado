@@ -4,12 +4,9 @@
     </h1>
 </div>
 <div>
-    <table class="center-hor layout-table" width="50px">
+    <table class="center-hor layout-table" width="800px">
         <thead>
             <tr class="header-table-gray">
-                <th>
-                    Índice
-                </th>
                 <th>
 					ID
 				</th>
@@ -17,16 +14,19 @@
 					Mercadoria
 				</th>
 				<th>
-					Quantidade
+					Quantidade em estoque
+				</th>
+				<th>
+					Quantidade mínima
+				</th>
+				<th>
+					Precisa comprar
 				</th>
             </tr>
         </thead>
         <tbody>
             <tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar" 
             [ngClass]="{par:par,impar:impar}">
-                <td>
-					{{i}}
-				</td>
 				<td>
 					{{mercadoria.id}}
 				</td>
@@ -34,7 +34,15 @@
 					{{mercadoria.descricao}}
 				</td>
 				<td>
-					{{mercadoria.quantidade}}
+					{{mercadoria.quantidadeEstoque}}
+				</td>
+				<td>
+					{{mercadoria.quantidadeMinima}} 
+				</td>
+				<td>
+					<span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima;then naoPrecisaComprar; else precisaComprar"></span>
+					<ng-template #precisaComprar>Sim</ng-template>
+					<ng-template #naoPrecisaComprar>Não</ng-template>
 				</td>
 			</tr>
 		</tbody>

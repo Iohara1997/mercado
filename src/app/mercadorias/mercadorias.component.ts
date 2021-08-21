@@ -11,18 +11,21 @@ export class MercadoriasComponent implements OnInit {
     {
         id:1,
       descricao:"Arroz",
-      quantidade:1
+      quantidadeEstoque:1,
+      quantidadeMinima: 2
     },
     {
         id:2,
       descricao:"Feijão",
-      quantidade:5
+      quantidadeEstoque:5,
+      quantidadeMinima:3
     },
     {
         id:3,
       descricao:"Óleo",
-      quantidade:2
-    },
+      quantidadeEstoque:2,
+      quantidadeMinima:2
+    }
   ]
 
   constructor() { }
