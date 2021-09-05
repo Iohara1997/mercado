@@ -10,9 +10,9 @@ export class MercadoriasComponent implements OnInit {
   mercadorias = [
     {
         id:1,
-      descricao:"Arroz",
-      quantidadeEstoque:1,
-      quantidadeMinima: 2
+    	descricao:"Arroz",
+    	quantidadeEstoque:1,
+      quantidadeMinima:2
     },
     {
         id:2,
@@ -28,9 +28,24 @@ export class MercadoriasComponent implements OnInit {
     }
   ]
 
+  novaMercadoria = {
+    id:4,
+    descricao: "Sal",
+    quantidadeEstoque: 2,
+    quantidadeMinima:1
+  }
+
+  adicionarMercadoria(){
+  this.mercadorias.push({
+    id:this.novaMercadoria.id,
+    descricao:this.novaMercadoria.descricao,
+    quantidadeEstoque:this.novaMercadoria.quantidadeEstoque,
+    quantidadeMinima:this.novaMercadoria.quantidadeMinima
+  })
+  }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
